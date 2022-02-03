@@ -165,4 +165,4 @@ or whatever method you are using for your Falsk application database management
 <br/>
 
 ### 6. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
-If nothing went wrong you should be able to launch your application and use your brand new ticketing system!
+You should be able to launch your application and use your brand new ticketing system! Navigate to `<your-application-URL>/ticket/index` and start your journey! :wink:
