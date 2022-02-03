@@ -18,7 +18,7 @@ It also has the advantage of creating a URL with the service name before any of 
 In order to implement [Flasket](https://github.com/cccnrc/flasket) in your application you need to take 4 simple steps:
 1. clone [Flasket](https://github.com/cccnrc/flasket)
 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
-3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your main application
+3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
 5. update your application database with [Flasket](https://github.com/cccnrc/flasket) tables
 6. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
@@ -63,12 +63,11 @@ $APP_DIR
 │   └── ...rest of app files...
 ```
 
-**2.1.** you can now put `ticket` templates inside your `app/templates` folder.
+**2.2.** you can now put `ticket` templates inside your `app/templates` folder.
 This way you will have all templates related to this service inside that folder:
 ```
 cp -r $FLASKET_DIR/templates/ticket $APP_DIR/app/templates/
 ```
-
 Your application should look similar to this now:
 ```
 $APP_DIR
@@ -88,3 +87,48 @@ $APP_DIR
 │   │       ├── ticket_submit.html
 │   │       └── user.html
 ```
+
+<br/>
+<br/>
+
+### 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
+**3.1.** if you take a look at `ticket/__init__.py` you see that this file simply defines a ticket `bp` (Blueprint) and imports all endpoints specified in its `routes.py` file:
+```
+from flask import Blueprint
+
+bp = Blueprint('ticket', __name__)
+
+from app.ticket import routes
+```
+
+**3.2.** import `ticket_bp` in your main application `app/__init__.py` file:
+```
+from app.ticket import bp as ticket_bp
+app.register_blueprint( ticket_bp, url_prefix='/ticket' )
+```
+- **Important**: this step below depends on how you are ***starting*** your Flask application. As example, we use a `create_app(config_class=Config)` function specified in `app/__init__.py` that we import into `main.py` and launch whenever the application is launched:
+```
+from app import create_app, db
+
+app = create_app()
+```
+- so we store the `app.ticket import` into that function in `app/__init__.py`:
+```
+from flask import Flask
+from config import Config     ### variables store in app/config.py
+# ... rest of imports ... #
+
+def create_app(config_class=Config):
+
+    app = Flask(__name__)
+    app.config.from_object(config_class)
+
+    # ... rest of function code ... #
+
+    from app.ticket import bp as ticket_bp
+    app.register_blueprint( ticket_bp, url_prefix='/ticket' )
+
+    # ... rest of function code ... #
+
+```
+this will put into your URL `/ticket` before any of the endpoint inherited from `app/ticket/routes.py` and your website will look much more professional :sunglasses:
