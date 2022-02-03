@@ -1,0 +1,49 @@
+{% extends "base_DXcator.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style>
+  div.index-container {
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 25%;
+    border: 0px solid red;
+  }
+</style>
+
+  <div class="index-container">
+
+    <h2>Ticket System</h2>
+
+    <br/>
+    <br/>
+
+    <a href="{{ url_for('ticket.submit') }}">
+      <button class="btn btn-success">
+        Submit New Ticket
+      </button>
+    </a>
+
+    <br/>
+    <br/>
+
+    <a href="{{ url_for('ticket.all') }}">
+      <button class="btn btn-info">
+        View All Tickets
+      </button>
+    </a>
+
+    <br/>
+    <br/>
+
+    <a href="{{ url_for('ticket.user', username=current_user.username) }}">
+      <button class="btn">
+        View Your Tickets
+      </button>
+    </a>
+    <br>
+
+  </div>
+
+{% endblock %}

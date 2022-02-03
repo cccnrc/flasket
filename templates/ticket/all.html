@@ -1,0 +1,133 @@
+{% extends "base_DXcator.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style>
+  div.ticket-container {
+    font-size: 150%;
+  }
+  .value {
+    font-weight: normal;
+    font-family: monospace;
+    font-size: 80%;
+  }
+  stream.key {
+    font-weight: bold;
+  }
+  #larger {
+    font-size: 100%;
+    font-family: monospace;
+  }
+  th {
+    text-align: center;
+    background-color: #dedede;
+    vertical-align: middle;
+  }
+  td {
+    font-size: 75%;
+    font-family: monospace;
+    max-width: 20%;
+    overflow-wrap: break-word;
+    vertical-align: middle;
+  }
+  table {
+    table-layout:fixed;
+    width:100%;
+  }
+  .closed {
+    background-color: rgba(255, 0, 0, 0.15);;
+  }
+  stream#open {
+    color: green;
+  }
+  stream#closed {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+
+
+  <div style="text-align: center; margin-top: 2%;">
+    <a href="{{ url_for('ticket.submit')}}">
+    <button class="btn btn-info">Submit your ticket</button>
+    </a>
+  </div>
+
+  <div class="ticket-container" style="margin-top: 2%;">
+  <hr>
+  <h3>Tickets:</h3>
+
+    <table class="table table-hover" style="text-align: center;">
+
+      <thead>
+        <tr>
+          <th>
+            author
+          </th>
+          <th>
+            title
+          </th>
+          <th>
+            application
+          </th>
+          <th>
+            topic
+          </th>
+          <th>
+            status
+          </th>
+          <th>
+            created on
+          </th>
+          <th>
+            last update
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for ticket in tickets %}
+
+        {% set STATUS = 'open' %}
+        {% if ticket.closed %}
+          {% set STATUS = 'closed' %}
+        {% endif %}
+
+        <tr>
+          <td class="{{ STATUS }}">
+            <a href="{{ url_for( 'ticket.user', username = ticket.author.username ) }}">
+              {{ ticket.author.username }}
+            </a>
+          </td>
+          <td class="{{ STATUS }}">
+            <a href="{{ url_for( 'ticket.ticket_reply', ticket_ID = ticket.id ) }}" target="_blank">
+              {{ ticket.title }}
+            </a>
+          </td>
+          <td class="{{ STATUS }}">
+            {{ ticket_app[ticket.application|string] }}
+          </td>
+          <td class="{{ STATUS }}">
+            {{ ticket_arg[ticket.argument|string] }}
+          </td>
+          <td class="{{ STATUS }}">
+            <stream id="{{ STATUS }}">
+              {{ STATUS }}
+            </stream>
+          </td>
+          <td class="{{ STATUS }}">
+            {{ ticket.timestamp.strftime("%m-%d-%Y (%H:%M)") }}
+          </td>
+          <td class="{{ STATUS }}">
+            {{ ticket.last_modify.strftime("%m-%d-%Y (%H:%M)") }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base_DXcator.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style>
+  div.ticket-container {
+    font-size: 150%;
+  }
+  .value {
+    font-weight: normal;
+    font-family: monospace;
+    font-size: 80%;
+  }
+  stream.key {
+    font-weight: bold;
+  }
+  #larger {
+    font-size: 100%;
+    font-family: monospace;
+  }
+</style>
+
+  <div class="ticket-container" style="margin-top: 5%;">
+
+    <stream class="key">Author:</stream> <stream class="value">{{ current_user.username }}</stream>
+    <br>
+    <br>
+
+    <form class="form-inline"  method="POST">
+      {{ form.hidden_tag() }}
+
+      {% for error in form.urgency.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+      <div class="form-group">
+        {{ form.urgency.label }}: {{ form.urgency(class="value") }}
+      </div>
+      <br>
+      <br>
+
+      {% for error in form.application.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+      <div class="form-group">
+        {{ form.application.label }}: {{ form.application(class="value") }}
+      </div>
+      <br>
+      <br>
+
+      {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+      <div class="form-group">
+        {{ form.argument.label }}: {{ form.argument(class="value") }}
+      </div>
+      <br>
+      <br>
+
+      {% for error in form.title.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+      <div class="form-group">
+        {{ form.title.label }}<stream style="font-size: 80%;"> (max 250 chars)</stream>: {{ form.title(class="value") }}
+      </div>
+      <br>
+      <br>
+
+
+      <div class="form-group">
+        {{ form.body.label }}:
+        <br>
+        {{ form.body(cols="60", rows="6", id='larger') }}
+      </div>
+      <br>
+      <br>
+      <div class="form-group">
+        {{ form.submit(class="btn btn-default") }}
+      </div>
+    </form>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,210 @@
+{% extends "base_DXcator.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style>
+  th {
+    text-align: center;
+    font-size: 120%;
+    background-color: #dedede;
+  }
+  h3 {
+    margin-left: 1%;
+  }
+  stream.username {
+    color: grey;
+    font-size: 80%;
+  }
+  td {
+    font-size: 90%;
+    font-family: monospace;
+    max-width: 20%;
+    overflow-wrap: break-word;
+  }
+  table {
+    table-layout:fixed;
+    width:100%;
+  }
+</style>
+
+
+  <h1>User: <stream class="username">{{ user.username }}</stream></h1>
+  <div style="text-align: center;">
+    <a href="{{ url_for('ticket.submit')}}">
+    <button class="btn btn-info">Submit your ticket</button>
+    </a>
+  </div>
+
+  <hr>
+  <h3>Tickets:</h3>
+
+  <table class="table table-hover" style="text-align: center;">
+
+    <thead>
+      <tr>
+        <th>
+          author
+        </th>
+        <th>
+          title
+        </th>
+        <th>
+          application
+        </th>
+        <th>
+          topic
+        </th>
+        <th>
+          created on
+        </th>
+        <th>
+          last update
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for ticket in tickets %}
+      <tr>
+        <td>
+          <a href="{{ url_for( 'ticket.user', username = ticket.author.username ) }}">
+            {{ ticket.author.username }}
+          </a>
+        <td>
+          <a href="{{ url_for( 'ticket.ticket_reply', ticket_ID = ticket.id ) }}" target="_blank">
+            {{ ticket.title }}
+          </a>
+        </td>
+        <td>
+          {{ ticket_app[ticket.application|string] }}
+        </td>
+        <td>
+          {{ ticket_arg[ticket.argument|string] }}
+        </td>
+        <td>
+          {{ ticket.timestamp.strftime("%m-%d-%Y (%H:%M)") }}
+        </td>
+        <td>
+          {{ ticket.last_modify.strftime("%m-%d-%Y (%H:%M)") }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+  <hr>
+  <h3>Ticket Followed:</h3>
+
+  <table class="table table-hover" style="text-align: center;">
+
+    <thead>
+      <tr>
+        <th>
+          author
+        </th>
+        <th>
+          title
+        </th>
+        <th>
+          application
+        </th>
+        <th>
+          topic
+        </th>
+        <th>
+          created on
+        </th>
+        <th>
+          last update
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for ticket in tickets_followed %}
+      <tr>
+        <td>
+          <a href="{{ url_for( 'ticket.user', username = ticket.author.username ) }}">
+            {{ ticket.author.username }}
+          </a>
+        <td>
+          <a href="{{ url_for( 'ticket.ticket_reply', ticket_ID = ticket.id ) }}" target="_blank">
+            {{ ticket.title }}
+          </a>
+        </td>
+        <td>
+          {{ ticket_app[ticket.application|string] }}
+        </td>
+        <td>
+          {{ ticket_arg[ticket.argument|string] }}
+        </td>
+        <td>
+          {{ ticket.timestamp.strftime("%m-%d-%Y (%H:%M)") }}
+        </td>
+        <td>
+          {{ ticket.last_modify.strftime("%m-%d-%Y (%H:%M)") }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+
+  </table>
+
+
+  <hr>
+  <h3>Ticket Updates:</h3>
+
+  <table class="table table-hover" style="text-align: center;">
+
+    <thead>
+      <tr>
+        <th>
+          author
+        </th>
+        <th>
+          title
+        </th>
+        <th>
+          application
+        </th>
+        <th>
+          topic
+        </th>
+        <th>
+          created on
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for ticket in ticket_replies %}
+      <tr>
+        <td>
+          <a href="{{ url_for( 'ticket.user', username = ticket.replier.username ) }}">
+            {{ ticket.replier.username }}
+          </a>
+        <td>
+          <a href="{{ url_for( 'ticket.ticket_reply', ticket_ID = ticket.original.id ) }}" target="_blank">
+            {{ ticket.original.title }}
+          </a>
+        </td>
+        <td>
+          {{ ticket_app[ticket.original.application|string] }}
+        </td>
+        <td>
+          {{ ticket_arg[ticket.original.argument|string] }}
+        </td>
+        <td>
+          {{ ticket.timestamp.strftime("%m-%d-%Y (%H:%M)") }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+
+  </table>
+
+{% endblock %}

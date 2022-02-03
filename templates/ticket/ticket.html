@@ -1,0 +1,32 @@
+{% extends "base_DXcator.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+<style>
+  stream.key {
+    font-weight: bold;
+  }
+  stream.value {
+  }
+  div.ticket-container {
+    font-size: 150%;
+  }
+</style>
+
+  <div class="ticket-container" style="margin-top: 15%;">
+    <stream class="key">Author:</stream> <stream class="value">{{ ticket.author.username }}</stream>
+    <br>
+    <stream class="key">Ticket ID:</stream> <stream class="value">{{ ticket.id }}</stream>
+    <br>
+    <stream class="key">Created On:</stream> <stream class="value">{{ ticket.timestamp }}</stream>
+    <br>
+    <stream class="key">Last Modified:</stream> <stream class="value">{{ ticket.last_modify }}</stream>
+    <br>
+    <stream class="key">Ticket Body:</stream>
+    <br>
+    <stream class="value">{{ ticket.body }}</stream>
+    <br>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+# in you app models.py you need to add those Tables:
+
+## add this at the beginning of models.py, before any Table declaration:
+user_tickets = db.Table(
+    "user_tickets",
+    db.Column("user_id", db.Integer, db.ForeignKey("user.id")),
+    db.Column("ticket_id", db.Integer, db.ForeignKey("ticket.id")),
+)
+
+### add this at the end of models.py:
+class Ticket(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(250))
+    body = db.Column(db.String(4000))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    last_modify = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    urgency = db.Column(db.Integer, index=True)
+    application = db.Column(db.Integer, index=True)
+    argument = db.Column(db.Integer, index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    closed = db.Column(db.Boolean, default=False)
+    closed_on = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    ticket_replies = db.relationship('TicketReply', backref='original', lazy='dynamic')
+    ticket_followers = db.relationship('User', secondary=user_tickets, back_populates="tickets_followed")
+
+class TicketReply(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String(4000))
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    original_id = db.Column(db.Integer, db.ForeignKey('ticket.id'))
+
+## add these columns into your User table declaration:
+
+class User(UserMixin, db.Model):
+  # ... rest of your User table columns ... #
+  admin = db.Column(db.Boolean, default=False)
+  tickets = db.relationship('Ticket', backref='author', lazy='dynamic')
+  ticket_replies = db.relationship('TicketReply', backref='replier', lazy='dynamic')
+  tickets_followed = db.relationship("Ticket", secondary=user_tickets, back_populates="ticket_followers")
+  # ... rest of your User table ... #

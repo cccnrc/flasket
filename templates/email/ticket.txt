@@ -1,0 +1,19 @@
+Dear {{ user.username }},
+
+There is an update in one of the tickets you are following:
+{{ ticket.original.title }}
+
+Here is the message:
+----------------------------------------------------------------
+{{ ticket.replier.username }}:
+
+{{ ticket.body }}
+----------------------------------------------------------------
+
+Click here to check this out:
+{{ url_for('ticket.ticket_reply', ticket_ID = ticket.original.id, _external=True) }}
+
+
+Sincerely,
+
+Developers Teams

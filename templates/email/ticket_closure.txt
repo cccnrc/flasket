@@ -1,0 +1,11 @@
+Dear {{ user.username }},
+
+A ticket you are following has been closed:
+{{ ticket.title }}
+
+Click here to check this out:
+{{ url_for('ticket.ticket_reply', ticket_ID = ticket.id, _external=True) }}
+
+Sincerely,
+
+The Developers Team

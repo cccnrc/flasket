@@ -1,0 +1,21 @@
+<p>Dear {{ user.username }},</p>
+<p>
+  There is an update in one of the tickets you are following:
+    <a href="{{ url_for('ticket.ticket_reply', ticket_ID = ticket.original.id, _external=True) }}">
+        {{ ticket.original.title }}
+    </a>.
+</p>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('ticket.ticket_reply', ticket_ID = ticket.original.id, _external=True) }}</p>
+<br>
+<br>
+<p>Here is the message:</p>
+--------------------------------------------------------
+<br>
+<p>{{ ticket.replier.username }}:<p>
+<br>
+<p>{{ ticket.body }}</p>
+<br>
+--------------------------------------------------------
+<p>Sincerely,</p>
+<p>The Developers Team</p>

@@ -1,0 +1,14 @@
+<p>Dear {{ user.username }},</p>
+<p>
+  A ticket you are following has been closed:
+    <a href="{{ url_for('ticket.ticket_reply', ticket_ID = ticket.id, _external=True) }}">
+        {{ ticket.title }}
+    </a>.
+</p>
+<br>
+<p>Alternatively, you can paste the following link in your browser's address bar:</p>
+<p>{{ url_for('ticket.ticket_reply', ticket_ID = ticket.id, _external=True) }}</p>
+<br>
+<br>
+<p>Sincerely,</p>
+<p>The Developers Team</p>
