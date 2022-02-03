@@ -7,15 +7,15 @@ This is a Ticket service for your [Flask](https://flask.palletsprojects.com/en/2
 ## Advantages
 
 The way we developed [Flasket](https://github.com/cccnrc/flasket) has 3 main advantages:
-1. you use tickets within **your application**:
-   - ***only registered users*** will be able to submit and interact with tickets
+1. you use tickets within ***your application***:
+   - ***only registered users*** will be able to submit and interact with tickets, avoiding bots, spam, etc.
    - ***your website*** will serve the ticketing system as its own service, you are not redirected to a different website etc.
+   - ***e-mail updates*** are sent to users for every ticket important activity, and these mails will come from your website, not external servers etc.
+2. you can ***edit tickets*** as you wish to best reflect your application needs
+3. it creates a ***domain subdirectory***: all web pages related to tickets will start their URL with: `https://yourdomain.com/ticket/` making it extremely easier to organize (for developers) and to use (for users)
+4. its extremely easy to integrate and update as it lives in a ***dedicated folder*** (`ticket`) within your application: you only need to work on this folder
 
-We developed this as a [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) branch: you only need to copy our `ticket` folder in you application and setup a couple of `import` and you will have your ticketing system on!
-
-[Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) is integrated in [Flask](https://flask.palletsprojects.com/en/2.0.x/) and allows you to logically organize your different application services (e.g. tickets, api, etc.) in different folders, making development (and your life) extremely easier! :sunglasses:
-
-It also has the advantage of creating a URL with the service name before any of the service's endpoints! Ex. `localhost/<service>/<endpoint>`
+We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy our `ticket` folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
 
 ---
 ## Installation
