@@ -160,3 +160,9 @@ flask db upgrade
 or whatever method you are using for your Falsk application database management
 
 - ***note***: if you add/remove columns etc. in `ticket/forms.py` you have to reflect such changes into `models.py`
+
+<br/>
+<br/>
+
+### 6. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
+If nothing went wrong you should be able to launch your application and use your brand new ticketing system!
