@@ -24,6 +24,9 @@ Ticket page:
 Tickets page:
 ![flasket-all](images/flasket-all.png)
 
+User ticket page:
+![flasket-ticket](images/flasket-user.png)
+
 We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy our `ticket` folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
 
 ---
