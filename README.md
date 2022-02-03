@@ -1,7 +1,6 @@
-# Flasket: Flask(tick)et
+# Flasket
 
-This is a Ticket service for your [Flask](https://flask.palletsprojects.com/en/2.0.x/) application.
-
+Flask(tick)et: a Ticket service for your [Flask](https://flask.palletsprojects.com/en/2.0.x/) application!
 
 ---
 ## Advantages
@@ -25,7 +24,7 @@ In order to implement [Flasket](https://github.com/cccnrc/flasket) in your appli
 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
-5. update your application database with [Flasket](https://github.com/cccnrc/flasket) tables
+5. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
 6. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
 
 <br/>
@@ -153,7 +152,7 @@ You can edit those as you wish, add/remove categories etc. to reflect your appli
 <br/>
 <br/>
 
-### 5. update your application database with [Flasket](https://github.com/cccnrc/flasket) tables
+### 5. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
 **5.1.** modify your `models.py` accordingly to what is specified in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt): you basically have to create `Ticket`, `TicketReply`, and `user_tickets` Tables, and add `admin`, `tickets`, `ticket_replies`, and `tickets_followed` to your `User` Table
 You will find detailed instructions for this in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt)
 
@@ -172,6 +171,7 @@ or whatever method you are using for your Falsk application database management
 ### 6. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
 You should be able to launch your application and use your brand new ticketing system! Navigate to `<your-application-URL>/ticket/index` and start your journey! :wink:
 
+Don't forget to put a link to tickets in your application navigation bar, homepage, etc. to let all users easily identify it!
 
 ---
 ## Updates
