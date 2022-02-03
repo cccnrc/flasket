@@ -38,8 +38,9 @@ In order to implement [Flasket](https://github.com/cccnrc/flasket) in your appli
 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
-5. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
-6. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
+5. edit [Flasket](https://github.com/cccnrc/flasket) `templates` to reflect your application
+6. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
+7. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
 
 <br/>
 
@@ -166,11 +167,22 @@ You can edit those as you wish, add/remove categories etc. to reflect your appli
 <br/>
 <br/>
 
-### 5. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
-**5.1.** modify your `models.py` accordingly to what is specified in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt): you basically have to create `Ticket`, `TicketReply`, and `user_tickets` Tables, and add `admin`, `tickets`, `ticket_replies`, and `tickets_followed` to your `User` Table
+### 5. edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application
+[Flasket](https://github.com/cccnrc/flasket) has all HTML pages needed for your ticketing system already developed and available in `ticket/templates`.
+We use [Django](https://docs.djangoproject.com/en/4.0/topics/templates/) to easily setup our HTML page, we assume you have a "base template" (as example, with the logos, navigation bar set etc.) of your application that we extends to all other templates with the first line of code you will find in any of them:
+```
+{% extends "base.html" %}
+```
+This assumes that this base template is called `base.html` and is found in `app/templates/`. Feel free to **change** this as you wish to reflect your application structure or **delete** it if you have no base template to extend!
+
+<br/>
+<br/>
+
+### 6. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
+**6.1.** modify your `models.py` accordingly to what is specified in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt): you basically have to create `Ticket`, `TicketReply`, and `user_tickets` Tables, and add `admin`, `tickets`, `ticket_replies`, and `tickets_followed` to your `User` Table
 You will find detailed instructions for this in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt)
 
-**5.2.** once `models.py` is updated, you need to apply those changes to your application database. Ex. if using `flask db`:
+**6.2.** once `models.py` is updated, you need to apply those changes to your application database. Ex. if using `flask db`:
 ```
 flask db migrate -m "added ticket tables"
 flask db upgrade
@@ -182,7 +194,7 @@ or whatever method you are using for your Falsk application database management
 <br/>
 <br/>
 
-### 6. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
+### 7. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
 You should be able to launch your application and use your brand new ticketing system! Navigate to `<your-application-URL>/ticket/index` and start your journey! :wink:
 
 Don't forget to put a link to tickets in your application navigation bar, homepage, etc. to let all users easily identify it!
