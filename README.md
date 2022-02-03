@@ -166,3 +166,25 @@ or whatever method you are using for your Falsk application database management
 
 ### 6. use [Flasket](https://github.com/cccnrc/flasket) for your tickets! :sunglasses:
 You should be able to launch your application and use your brand new ticketing system! Navigate to `<your-application-URL>/ticket/index` and start your journey! :wink:
+
+
+---
+## Updates
+Anytime we make a changes to [Flasket](https://github.com/cccnrc/flasket) you can integrate such change into your running application simply updating `ticket` folders:
+```
+cd $FLASKET_DIR
+git pull
+cp -r $FLASKET_DIR/ticket $APP_DIR/app/
+cp -r $FLASKET_DIR/templates/ticket $APP_DIR/app/templates/
+```
+- ***note***: you need to have `$APP_DIR` and `$FLASKET_DIR` set in your environment variables
+- ***note***: if you make local changes to those files this update can erase your changes. We strongly recommend you to make changes to ***other files*** within those directories and `import` them into your main application to integrate with [Flasket](https://github.com/cccnrc/flasket) updates
+
+---
+## Acknowledgments
+
+Regarding [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/), mails, etc. you also have a guide in the outstanding Miguel Grinber [Microblog Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
+
+The way we set up the main application is based on the way [Microblog](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) is configured. If you take a look at this amazing tutorial, integrating [Flasket](https://github.com/cccnrc/flasket) will be extremely straightforward
+
+Thank you so much Miguel, nothing of this would probably exists without your guide :pray:
