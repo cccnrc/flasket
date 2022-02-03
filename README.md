@@ -13,10 +13,17 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has 3 main adv
 2. you can ***edit tickets*** as you wish to best reflect your application needs
 3. it creates a ***domain subdirectory***: all web pages related to tickets will start their URL with: `https://yourdomain.com/ticket/` making it extremely easier to organize (for developers) and to use (for users)
 4. its extremely easy to integrate and update as it lives in a ***dedicated folder*** (`ticket`) within your application: you only need to work on this folder
+5. ***extremely user friendly*** pages:
+Ticket submission page:
+![flasket-submit](images/flasket-submit.png)
+
+Ticket page:
+![flasket-ticket](images/flasket-ticket.png)
+
+Tickets page:
+![flasket-all](images/flasket-all.png)
 
 We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy our `ticket` folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
-
-![This is an image](images/flasket-submit.png)
 
 ---
 ## Installation
