@@ -26,3 +26,18 @@ In order to implement [Flasket](https://github.com/cccnrc/flasket) in your appli
 <br/>
 
 ### 1. clone [Flasket](https://github.com/cccnrc/flasket)
+**1.1.** set your application main folder as `APP_DIR` environment variable:
+```
+APP_DIR=<your-Flask-application-directory>
+```
+- ***note***: replace `<your-Flask-application-directory>` with the path to your Flask application directory
+
+<br />
+
+**1.2.** clone the [Flasket](https://github.com/cccnrc/flasket) repository (outside your application folder):
+```
+cd
+git clone https://github.com/cccnrc/flasket.git
+FLASKET_DIR=$( pwd )/flasket
+```
+- **Important**: if you use different terminal windows environment variables ***are not inherited***. Thus, you need to ***reset*** them (`APP_DIR`, `FLASKET_DIR`) for any new terminal window you will use.
