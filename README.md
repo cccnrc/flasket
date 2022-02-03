@@ -38,7 +38,7 @@ In order to implement [Flasket](https://github.com/cccnrc/flasket) in your appli
 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
-5. edit [Flasket](https://github.com/cccnrc/flasket) `templates` to reflect your application
+5. edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application
 6. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
 7. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
 
