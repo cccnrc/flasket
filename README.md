@@ -41,3 +41,50 @@ git clone https://github.com/cccnrc/flasket.git
 FLASKET_DIR=$( pwd )/flasket
 ```
 - **Important**: if you use different terminal windows environment variables ***are not inherited***. Thus, you need to ***reset*** them (`APP_DIR`, `FLASKET_DIR`) for any new terminal window you will use.
+
+
+<br/>
+<br/>
+
+### 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
+**2.1.** we want to create a `ticket` blueprint branch for our application. We first need to create the folder in your application structure: you can simply copy into `app/` the `ticket` folder of this repository:
+```
+cp -r $FLASKET_DIR/ticket $APP_DIR/app/
+```
+Assuming your application main folder is called `app` you should get this structure:
+```
+$APP_DIR
+├── app
+│   ├── ticket
+│   │   ├── __init__.py
+│   │   ├── email.py
+│   │   ├── forms.py
+│   │   └── routes.py
+│   └── ...rest of app files...
+```
+
+**2.1.** you can now put `ticket` templates inside your `app/templates` folder.
+This way you will have all templates related to this service inside that folder:
+```
+cp -r $FLASKET_DIR/templates/ticket $APP_DIR/app/templates/
+```
+
+Your application should look similar to this now:
+```
+$APP_DIR
+├── app
+│   ├── ticket
+│   │   ├── __init__.py
+│   │   ├── email.py
+│   │   ├── forms.py
+│   │   └── routes.py
+│   ├── templates
+│   │   ├── ... rest of your templates ...
+│   │   └── ticket
+│   │       ├── index.html
+│   │       ├── all.html
+│   │       ├── ticket.html
+│   │       ├── ticket_reply.html
+│   │       ├── ticket_submit.html
+│   │       └── user.html
+```
