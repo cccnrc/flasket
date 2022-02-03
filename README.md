@@ -142,6 +142,7 @@ def create_app(config_class=Config):
 - *urgency*: the level of importance of the ticket (`urgency_choices`)
 - *application*: which application the ticket is referring to (`ticket_app`)
 - *argument*: which topic the ticket is referring to (`ticket_arg`)
+
 You can edit those as you wish, add/remove categories etc. to reflect your application needs
 
 <br/>
@@ -156,4 +157,4 @@ You will find detailed instructions for this in [ticket-models-instructions.txt]
 flask db migrate -m "added ticket tables"
 flask db upgrade
 ```
-- or whatever method you are using for your database management
+or whatever method you are using for your Falsk application database management
