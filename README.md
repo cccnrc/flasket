@@ -199,6 +199,20 @@ cp -r $FLASKET_DIR/templates/ticket $APP_DIR/app/templates/
 - ***note***: if you make local changes to those files this update can erase your changes. We strongly recommend you to make changes to ***other files*** within those directories and `import` them into your main application to integrate with [Flasket](https://github.com/cccnrc/flasket) updates
 
 ---
+## Development
+
+Whenever you want to share a change you made to [Flasket](https://github.com/cccnrc/flasket):
+```
+cd $FLASKET_DIR
+git branch <your-name>-development
+git checkout <your-name>-development
+git add .
+git commit -m "<your-name>-development ..."
+git push https://github.com/cccnrc/flasket.git <your-name>-development
+```
+- ***note***: change `<your-name>` in the above commands with your [GitHub](https://github.com/) username or whatever identifier you wish to have
+
+---
 ## Acknowledgments
 
 Regarding [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/), mails, etc. you also have a guide in the outstanding Miguel Grinber [Microblog Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
