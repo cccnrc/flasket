@@ -106,7 +106,7 @@ from app.ticket import routes
 from app.ticket import bp as ticket_bp
 app.register_blueprint( ticket_bp, url_prefix='/ticket' )
 ```
-- **Important**: this step below depends on how you are ***starting*** your Flask application. As example, we use a `create_app(config_class=Config)` function specified in `app/__init__.py` that we import into `main.py` and launch whenever the application is launched:
+- **Important**: this step depends on how you are ***starting*** your Flask application. As example, we use a `create_app(config_class=Config)` function specified in `app/__init__.py` that we import into `main.py` and starts it whenever the application is launched:
 ```
 from app import create_app, db
 
@@ -131,4 +131,29 @@ def create_app(config_class=Config):
     # ... rest of function code ... #
 
 ```
-this will put into your URL `/ticket` before any of the endpoint inherited from `app/ticket/routes.py` and your website will look much more professional :sunglasses:
+- this configuration will put into your URL `/ticket` before any of the endpoint inherited from `app/ticket/routes.py` and your website will look much more professional :sunglasses:
+
+
+<br/>
+<br/>
+
+### 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
+[Flasket](https://github.com/cccnrc/flasket) tickets come with several fields that you find in `ticket/forms.py`:
+- *urgency*: the level of importance of the ticket (`urgency_choices`)
+- *application*: which application the ticket is referring to (`ticket_app`)
+- *argument*: which topic the ticket is referring to (`ticket_arg`)
+You can edit those as you wish, add/remove categories etc. to reflect your application needs
+
+<br/>
+<br/>
+
+### 5. update your application database with [Flasket](https://github.com/cccnrc/flasket) tables
+**5.1.** modify your `models.py` accordingly to what is specified in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt): you basically have to create `Ticket`, `TicketReply`, and `user_tickets` Tables, and add `admin`, `tickets`, `ticket_replies`, and `tickets_followed` to your `User` Table
+You will find detailed instructions for this in [ticket-models-instructions.txt](https://github.com/cccnrc/flasket/blob/main/ticket-models-instructions.txt)
+
+**5.2.** once `models.py` is updated, you need to apply those changes to your application database. Ex. if using `flask db`:
+```
+flask db migrate -m "added ticket tables"
+flask db upgrade
+```
+- or whatever method you are using for your database management
