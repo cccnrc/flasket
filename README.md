@@ -158,3 +158,5 @@ flask db migrate -m "added ticket tables"
 flask db upgrade
 ```
 or whatever method you are using for your Falsk application database management
+
+- ***note***: if you add/remove columns etc. in `ticket/forms.py` you have to reflect such changes into `models.py`
