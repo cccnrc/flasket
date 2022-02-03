@@ -8,8 +8,8 @@ This is a Ticket service for your [Flask](https://flask.palletsprojects.com/en/2
 
 The way we developed [Flasket](https://github.com/cccnrc/flasket) has 3 main advantages:
 1. you use tickets within **your application**:
-  - ***only registered users*** will be able to submit and interact with tickets
-  - ***your website*** will serve the ticketing system as its own service, you are not redirected to a different website etc.
+   - ***only registered users*** will be able to submit and interact with tickets
+   - ***your website*** will serve the ticketing system as its own service, you are not redirected to a different website etc.
 
 We developed this as a [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) branch: you only need to copy our `ticket` folder in you application and setup a couple of `import` and you will have your ticketing system on!
 
