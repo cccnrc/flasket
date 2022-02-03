@@ -14,6 +14,7 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has 3 main adv
 3. it creates a ***domain subdirectory***: all web pages related to tickets will start their URL with: `https://yourdomain.com/ticket/` making it extremely easier to organize (for developers) and to use (for users)
 4. its extremely easy to integrate and update as it lives in a ***dedicated folder*** (`ticket`) within your application: you only need to work on this folder
 5. ***extremely user friendly*** pages:
+
 Ticket submission page:
 ![flasket-submit](images/flasket-submit.png)
 
