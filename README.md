@@ -16,6 +16,8 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has 3 main adv
 
 We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy our `ticket` folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
 
+![This is an image](images/flasket-submit.png)
+
 ---
 ## Installation
 
