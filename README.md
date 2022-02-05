@@ -28,7 +28,7 @@ Tickets page:
 User ticket page:
 ![flasket-user](images/flasket-user.png)
 
-We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy our `ticket` folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
+We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy [ticket](https://github.com/cccnrc/flasket/blob/main/ticket) folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
 
 ---
 ## Installation
@@ -66,7 +66,7 @@ FLASKET_DIR=$( pwd )/flasket
 <br/>
 
 ### 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
-**2.1.** we want to create a `ticket` blueprint branch for our application. We first need to create the folder in your application structure: you can simply copy into `app/` the `ticket` folder of this repository:
+**2.1.** we want to create a `ticket` blueprint branch for our application. We first need to create the folder in your application structure: you can simply copy into `app/` the [ticket](https://github.com/cccnrc/flasket/blob/main/ticket) folder of this repository:
 ```
 cp -r $FLASKET_DIR/ticket $APP_DIR/app/
 ```
@@ -82,7 +82,7 @@ $APP_DIR
 │   └── ...rest of app files...
 ```
 
-**2.2.** you can now put `ticket` templates inside your `app/templates` folder.
+**2.2.** you can now put [flasket templates](https://github.com/cccnrc/flasket/blob/main/templates/ticket) inside your `app/templates` folder.
 This way you will have all templates related to this service inside that folder:
 ```
 cp -r $FLASKET_DIR/templates/ticket $APP_DIR/app/templates/
