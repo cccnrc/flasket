@@ -120,18 +120,18 @@ bp = Blueprint('ticket', __name__)
 from app.ticket import routes
 ```
 
-**3.2.** import `ticket_bp` in your main application `app/__init__.py` file:
+**3.2.** import `ticket_bp` in your main application (`app/__init__.py`) file:
 ```
 from app.ticket import bp as ticket_bp
 app.register_blueprint( ticket_bp, url_prefix='/ticket' )
 ```
-- **Important**: this step depends on how you are ***starting*** your Flask application. As example, we use a `create_app(config_class=Config)` function specified in `app/__init__.py` that we import into `main.py` and starts it whenever the application is launched:
+- **Important**: this step depends on how you are ***starting*** your Flask application. As example, we use a `create_app(config_class=Config)` function specified in our main `app/__init__.py` that we import into the main app caller `main.py` and starts it whenever the application is launched (`from main import app`):
 ```
 from app import create_app, db
 
 app = create_app()
 ```
-- so we store the `app.ticket import` into that function in `app/__init__.py`:
+- so we store the `app.ticket import` into that function in  our main `app/__init__.py`:
 ```
 from flask import Flask
 from config import Config     ### variables store in app/config.py
@@ -150,7 +150,7 @@ def create_app(config_class=Config):
     # ... rest of function code ... #
 
 ```
-- this configuration will put into your URL `/ticket` before any of the endpoint inherited from `app/ticket/routes.py` and your website will look much more professional :sunglasses:
+- this configuration will put into your URL `/ticket` before any of the endpoint inherited from [routes.py](https://github.com/cccnrc/flasket/blob/main/ticket/routes.py) and your website will look much more professional :sunglasses:
 
 
 <br/>
@@ -168,7 +168,7 @@ You can edit those as you wish, add/remove categories etc. to reflect your appli
 <br/>
 
 ### 5. edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application
-[Flasket](https://github.com/cccnrc/flasket) has all HTML pages needed for your ticketing system already developed and available in `ticket/templates`.
+[Flasket](https://github.com/cccnrc/flasket) has all HTML pages needed for your ticketing system already developed and available in [templates](https://github.com/cccnrc/flasket/blob/main/templates/ticket).
 We use [Django](https://docs.djangoproject.com/en/4.0/topics/templates/) to easily setup our HTML page, we assume you have a "base template" (as example, with the logos, navigation bar set etc.) of your application that we extends to all other templates with the first line of code you will find in any of them:
 ```
 {% extends "base.html" %}
@@ -201,7 +201,7 @@ Don't forget to put a link to tickets in your application navigation bar, homepa
 
 ---
 ## Updates
-Anytime we make a changes to [Flasket](https://github.com/cccnrc/flasket) you can integrate such change into your running application simply updating `ticket` folders:
+Anytime we make a changes to [Flasket](https://github.com/cccnrc/flasket) you can integrate such change into your running application simply updating [ticket](https://github.com/cccnrc/flasket/blob/main/ticket) and [templates/ticket](https://github.com/cccnrc/flasket/blob/main/templates/ticket) folders:
 ```
 cd $FLASKET_DIR
 git pull
