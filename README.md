@@ -37,7 +37,7 @@ In order to implement [Flasket](https://github.com/cccnrc/flasket) in your appli
 1. clone [Flasket](https://github.com/cccnrc/flasket)
 2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application
 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
-4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
+4. edit [Flasket](https://github.com/cccnrc/flasket) [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py) to reflect your application
 5. edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application
 6. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database
 7. use [Flasket](https://github.com/cccnrc/flasket) :sunglasses:
@@ -156,8 +156,8 @@ def create_app(config_class=Config):
 <br/>
 <br/>
 
-### 4. edit [Flasket](https://github.com/cccnrc/flasket) `forms.py` to reflect your application
-[Flasket](https://github.com/cccnrc/flasket) tickets come with several fields that you find in `ticket/forms.py`:
+### 4. edit [Flasket](https://github.com/cccnrc/flasket) [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py) to reflect your application
+[Flasket](https://github.com/cccnrc/flasket) tickets come with several fields that you find in [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py):
 - *urgency*: the level of importance of the ticket (`urgency_choices`)
 - *application*: which application the ticket is referring to (`ticket_app`)
 - *argument*: which topic the ticket is referring to (`ticket_arg`)
@@ -189,7 +189,7 @@ flask db upgrade
 ```
 or whatever method you are using for your Falsk application database management
 
-- ***note***: if you add/remove columns etc. in `ticket/forms.py` you have to reflect such changes into `models.py`
+- ***note***: if you add/remove columns etc. in [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py) you have to reflect such changes into `models.py`
 
 <br/>
 <br/>
