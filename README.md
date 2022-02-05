@@ -12,7 +12,7 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has several ad
    - ***e-mail updates*** are sent to users for every ticket important activity, and these mails will come from your website, not external servers etc.
 2. you can ***edit tickets*** as you wish to best reflect your application needs
 3. it creates a ***domain subdirectory***: all web pages related to tickets will start their URL with: `https://yourdomain.com/ticket/` making it extremely easier to organize (for developers) and to use (for users)
-4. its extremely easy to integrate and update as it lives in a ***dedicated folder*** (`ticket`) within your application: you only need to work on this folder
+4. its extremely easy to integrate and update as it lives in a ***dedicated folder*** ([ticket](https://github.com/cccnrc/flasket/blob/main/ticket)) within your application: you only need to work on this folder
 5. you can ***develop*** whatever improvement to [Flasket](https://github.com/cccnrc/flasket) and we'll consider integration (see [Development](https://github.com/cccnrc/flasket#development) section above)
 6. ***extremely user friendly*** pages:
 
