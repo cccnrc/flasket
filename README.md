@@ -34,13 +34,13 @@ We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to d
 ## Installation
 
 In order to implement [Flasket](https://github.com/cccnrc/flasket) in your application you need to take 4 simple steps:
-**1.** clone [Flasket](https://github.com/cccnrc/flasket) ([go](https://github.com/cccnrc/flasket#1-clone-flasket))
-**2.** copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application ([go](https://github.com/cccnrc/flasket#2-copy-flasket-folders-in-your-flask-application))
-**3.** setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application ([go](https://github.com/cccnrc/flasket#3-setup-flasket-imports-in-your-flask-application))
-**4.** edit [Flasket](https://github.com/cccnrc/flasket) [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py) to reflect your application ([go](https://github.com/cccnrc/flasket#4-edit-flasket-formspy-to-reflect-your-application))
-**5.** edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application ([go](https://github.com/cccnrc/flasket#5-edit-flasket-html-pages-to-reflect-your-application))
-**6.** create [Flasket](https://github.com/cccnrc/flasket) tables in your application database ([go](https://github.com/cccnrc/flasket#6-create-flasket-tables-in-your-application-database))
-**7.** use [Flasket](https://github.com/cccnrc/flasket) ([go](https://github.com/cccnrc/flasket#7-use-flasket-for-your-tickets-sunglasses)) :sunglasses:
+1. clone [Flasket](https://github.com/cccnrc/flasket) ([go](https://github.com/cccnrc/flasket#1-clone-flasket))
+2. copy [Flasket](https://github.com/cccnrc/flasket) folders in your Flask application ([go](https://github.com/cccnrc/flasket#2-copy-flasket-folders-in-your-flask-application))
+3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application ([go](https://github.com/cccnrc/flasket#3-setup-flasket-imports-in-your-flask-application))
+4. edit [Flasket](https://github.com/cccnrc/flasket) [forms.py](https://github.com/cccnrc/flasket/blob/main/ticket/forms.py) to reflect your application ([go](https://github.com/cccnrc/flasket#4-edit-flasket-formspy-to-reflect-your-application))
+5. edit [Flasket](https://github.com/cccnrc/flasket) HTML pages to reflect your application ([go](https://github.com/cccnrc/flasket#5-edit-flasket-html-pages-to-reflect-your-application))
+6. create [Flasket](https://github.com/cccnrc/flasket) tables in your application database ([go](https://github.com/cccnrc/flasket#6-create-flasket-tables-in-your-application-database))
+7. use [Flasket](https://github.com/cccnrc/flasket) ([go](https://github.com/cccnrc/flasket#7-use-flasket-for-your-tickets-sunglasses)) :sunglasses:
 
 <br/>
 
