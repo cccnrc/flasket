@@ -16,10 +16,10 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has several ad
 5. you can ***develop*** whatever improvement to [Flasket](https://github.com/cccnrc/flasket) and we'll consider integration (see [Development](https://github.com/cccnrc/flasket#development) section above)
 6. ***extremely user friendly*** pages:
 
-- Ticket submission page:
+   - Ticket submission page:
 ![flasket-submit](images/flasket-submit.png)
 
-- Ticket page:
+   - Ticket page:
 ![flasket-ticket](images/flasket-ticket.png)
 
 - Tickets page:
