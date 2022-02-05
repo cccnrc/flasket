@@ -1,6 +1,6 @@
 # Flasket
 
-**Flask**_tick_**et**: a Ticket service for your [Flask](https://flask.palletsprojects.com/en/2.0.x/) application!
+**Flask**_tick_**et**: a <sub>Ticket</sub> service for your [Flask](https://flask.palletsprojects.com/en/2.0.x/) application!
 
 ---
 ## Advantages
