@@ -111,7 +111,7 @@ $APP_DIR
 <br/>
 
 ### 3. setup [Flasket](https://github.com/cccnrc/flasket) imports in your Flask application
-**3.1.** if you take a look at `ticket/__init__.py` you see that this file simply defines a ticket `bp` (Blueprint) and imports all endpoints specified in its `routes.py` file:
+**3.1.** if you take a look at [__init__.py](https://github.com/cccnrc/flasket/blob/main/ticket/__init__.py) you see that this file simply defines a ticket `bp` (Blueprint) and imports all endpoints specified in its `routes.py` file:
 ```
 from flask import Blueprint
 
