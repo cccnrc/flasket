@@ -25,7 +25,7 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has several ad
    - 6.3. _ticket database page_:
 ![flasket-all](images/flasket-all.png)
 
-User ticket page:
+   - 6.4. _user's ticket page_:
 ![flasket-user](images/flasket-user.png)
 
 We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy [ticket](https://github.com/cccnrc/flasket/blob/main/ticket) folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
