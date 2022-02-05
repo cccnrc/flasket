@@ -16,16 +16,16 @@ The way we developed [Flasket](https://github.com/cccnrc/flasket) has several ad
 5. you can ***develop*** whatever improvement to [Flasket](https://github.com/cccnrc/flasket) and we'll consider integration (see [Development](https://github.com/cccnrc/flasket#development) section above)
 6. ***extremely user friendly*** pages:
 
-   - 6.1. _ticket submission page_:
+   - **6.1.** _ticket submission page_:
 ![flasket-submit](images/flasket-submit.png)
 
-   - 6.2. _ticket page_:
+   - **6.2.** _ticket page_:
 ![flasket-ticket](images/flasket-ticket.png)
 
-   - 6.3. _ticket database page_:
+   - **6.3.** _ticket database page_:
 ![flasket-all](images/flasket-all.png)
 
-   - 6.4. _user's ticket page_:
+   - **6.4.** _user's ticket page_:
 ![flasket-user](images/flasket-user.png)
 
 We used [Blueprint](https://flask.palletsprojects.com/en/2.0.x/blueprints/) to develop this: you only need to copy [ticket](https://github.com/cccnrc/flasket/blob/main/ticket) folder in you application and setup the database and a couple of `import` and you will have your ticketing system on!
