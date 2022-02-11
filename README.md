@@ -3,6 +3,11 @@
 **Flask**<sub>_tick_</sub>**et**: a ticket service for your [Flask](https://flask.palletsprojects.com/en/2.0.x/) application!
 
 ---
+## Try it :sunglasses:
+
+You can give [Flasket](https://github.com/cccnrc/flasket) a try before deploying. Just have a look at [flasket.net](https://flasket.net) :rocket:
+
+---
 ## Advantages
 
 The way we developed [Flasket](https://github.com/cccnrc/flasket) has several advantages:
